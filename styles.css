@@ -297,19 +297,6 @@
             min-width: 220px;
         }
 
-        /* TESTIMONIALS */
-        .testimonials {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-        }
-        .testimonial {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 12px;
-            min-width: 340px;
-        }
-
         #main-footer {
     width: 100%;
     background-color: #f4f4f4;
@@ -435,7 +422,10 @@ font-size: 30px;
     font-weight: 700;
     line-height: 100%;
     color: #000000;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
+    text-align: center;   /* 👈 THIS CENTERS THE TEXT */
+    width: 100%;          /* Ensures it takes the full width to center properly */
+    display: block;       /* Makes sure it behaves like a full-width block */
 }
 .slider-wrapper {
     position: relative;
@@ -444,18 +434,32 @@ font-size: 30px;
 }
 
 /* Arrows */
-.slider-wrapper button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: white;
+/* Slider Arrows - Match Photo 1 */
+.slider-wrapper button, .test-arrow {
+    background-color: #1B2D5A; /* Your dark blue brand color */
     border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    width: 44px;      /* Exact size for a neat circle */
+    height: 44px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    z-index: 10;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.slider-wrapper button:hover, .test-arrow:hover {
+    background-color: #1e40af; /* Slightly lighter blue on hover */
+}
+
+/* Make sure the arrow image inside is white */
+.slider-wrapper button img, .test-arrow img {
+    width: 18px; 
+    height: auto;
+    filter: brightness(0) invert(1); /* Forces the icon to be white */
 }
 
 /* LEFT arrow */
@@ -473,11 +477,11 @@ font-size: 30px;
 .specialties-row {
     display: flex;
     align-items: center;
-    justify-content: flex-start;  /* 👈 move content left */
+    justify-content: center;  /* 👈 move content */
     gap: 120px;
     width: 100%;
-    padding: 0 40px;
-    margin-left: 80px;            /* 👈 control how much left shift */
+    padding:40px 20px;
+    margin-left:0;            /* 👈 control how much left shift */
 }
 
 /* text blocks */
@@ -499,4 +503,212 @@ font-size: 30px;
 .specialties-row li {
     margin-bottom: 40px; /* 🔥 BIGGER SPACE */
     line-height: 2;      /* more vertical breathing */
+}
+.products-push-right {
+    margin-left: 180px; /* Adjust this number to push further or less */
+    padding-right: 60px; /* Prevents it from hitting the right edge */
+}
+
+/* Ensure the grid doesn't stretch weirdly */
+.featured-grid {
+    display: flex;
+    gap: 40px;
+    overflow-x: hidden;
+    padding-bottom: 20px; /* Space for the scrollbar if it appears */
+}
+
+/* Make product cards look uniform */
+.product-card {
+    min-width: 250px; 
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+/* Align the Embrace section to the left */
+.embrace-left-align {
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
+    max-width: 1250px;
+    margin-left: 80px; /* Exact match to Featured Products alignment */
+    gap: 50px;
+    padding: 0;
+}
+
+/* Fix the heading size and color inside Embrace */
+#Heading {
+    font-size: 38px; /* Slightly bigger to look more professional */
+    color: #1B2D5A;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Ensure the text and buttons don't float too far right */
+.embrace-content > div:first-child {
+    max-width: 600px; /* Keeps the text block neat */
+    text-align: left;
+}
+/* --- NEW TESTIMONIALS (MATCHING IMAGE 2) --- */
+
+.testimonial-section {
+    background: #fff; /* White background for this section */
+    padding: 80px 0; /* Add top and bottom breathing room */
+}
+
+/* 1. Alignment Wrapper (Aligns with other sections) */
+.testimonial-push-wrapper {
+    max-width: 1250px; /* Use your existing container width if different */
+    margin: 0 auto; /* Default centering */
+    /* UNCOMMENT THE LINE BELOW AND SET THE NUMBER TO YOUR DESIRED LEFT MARGIN 
+       TO MATCH THE OTHER SECTIONS WE SHIFTED */
+    /* margin-left: 80px; */ 
+    padding: 0 40px; /* Add some default padding */
+}
+
+/* 2. Title Styling */
+.testimonial-title {
+    font-size: 38px; /* Match the large, bold font */
+    font-weight: 800;
+    color: #1B2D5A; /* Dark blue color */
+    text-align: left; /* Image shows it left-aligned within the container */
+    margin-bottom: 50px; /* Space below the title */
+}
+
+/* 3. The Grid and Container */
+.testimonials-container {
+    position: relative; /* Essential for arrow button positioning */
+    display: flex;
+    align-items: center; /* Center the grid vertically */
+    gap: 20px;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: center; /* Center the cards if there are fewer than 3 */
+    gap: 30px; /* Space between cards */
+    width: 100%;
+}
+
+/* 4. The Card - TALL AND CLEAN */
+.testimonial-card {
+    background-color: #f0f0f0; /* Light gray background matching image */
+    flex: 0 0 32%; /* Take up nearly 1/3 of the container width */
+    min-width: 280px; /* Minimum width for the card */
+    min-height: 380px; /* Force the cards to be tall, matching the design */
+    border-radius: 16px; /* Smooth rounded corners */
+    padding: 40px; /* Large internal padding */
+    display: flex;
+    flex-direction: column; /* Stack the quote and the user */
+    justify-content: space-between; /* Push the quote to the top and the user to the bottom */
+    transition: transform 0.3s ease; /* Subtle hover effect */
+}
+
+/* 5. Quote Text */
+.test-quote {
+    font-size: 1.1rem; /* Slightly larger text */
+    color: #4b5563; /* Dark gray text color */
+    line-height: 1.7; /* Increased line-height for modern breathing room */
+    text-align: left;
+    margin: 0;
+}
+
+/* 6. User Text - BOLD AND BOTTOM ALIGNED */
+.test-user {
+    font-size: 1.1rem;
+    font-weight: 700; /* Bold username */
+    color: #000000; /* Black text */
+    text-align: left;
+    margin: 0;
+    padding-top: 20px; /* Space above the name */
+}
+
+/* 7. Hover Effect */
+.testimonial-card:hover {
+    transform: translateY(-8px); /* Card 'pops' up on hover */
+}
+
+/* 8. The Arrow Buttons (Match existing arrow buttons but specific) */
+.test-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #1B2D5A; /* Dark blue background */
+    border: none;
+    width: 44px; /* Standard button size */
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.test-arrow img {
+    width: 18px; /* Icon size within the button */
+    filter: brightness(0) invert(1); /* Ensure icons are white if they are black PNGs */
+}
+
+/* Position the specific arrows */
+.left-test-arrow {
+    left: -22px; /* Position half-off the left edge */
+}
+
+.right-test-arrow {
+    right: -22px; /* Position half-off the right edge */
+}
+/* --- FULL RECAPTCHA LOOK --- */
+
+.recaptcha-box {
+    display: flex;
+    justify-content: space-between; /* Pushes content to far left and far right */
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    padding: 10px 12px;
+    width: 300px;
+    margin: 20px 0;
+    box-shadow: 0 0 4px rgba(0,0,0,0.05);
+}
+
+.recaptcha-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.recaptcha-check {
+    width: 24px !important;
+    height: 24px !important;
+    cursor: pointer;
+}
+
+.recaptcha-text {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+}
+
+/* Right side branding */
+.recaptcha-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.recaptcha-logo-img {
+    width: 32px; /* Small logo size */
+    height: auto;
+    margin-bottom: 2px;
+}
+
+.recaptcha-privacy-text {
+    font-size: 8px; /* Very small text like the original */
+    color: #555;
+    margin: 0;
+    text-align: center;
+    line-height: 1;
 }
