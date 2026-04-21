@@ -112,7 +112,17 @@
                     <option>5L</option>
                 </select>
                 <textarea placeholder="Additional comments" rows="4"></textarea>
-                <label><input type="checkbox"> I'm not a robot</label>
+         <div class="recaptcha-box">
+    <div class="recaptcha-left">
+        <input type="checkbox" class="recaptcha-check" required>
+        <span class="recaptcha-text">I'm not a robot</span>
+    </div>
+
+    <div class="recaptcha-right">
+        <img src="images/RecaptchaLogo.svg 1.png" alt="reCAPTCHA" class="recaptcha-logo-img">
+        <p class="recaptcha-privacy-text">Privacy - Terms</p>
+    </div>
+</div>
                 <button type="button" class="btn" style="width:100%; margin-top:15px;">Enquire Now</button>
             </form>
         </div>
@@ -124,6 +134,7 @@
     <!-- LEFT ARROW -->
     <button class="arrow-btn left" onclick="slideLeft()">
     <img src="images/arrow-left.png" alt="left">
+    
 </button>
 
     <div class="slider-container">
@@ -171,7 +182,7 @@
 
     <!-- EMBRACE SECTION -->
     <section class="embrace">
-        <div class="embrace-content">
+        <div class="embrace-content embrace-left-align">
             <div>
                 <h6 id="Heading">Embrace a Healthier Home:<br>The Power of Natural Cleaning</h6>
                 <p style="margin:25px 0; font-size:1.1rem;">In today’s world, where environmental awareness is paramount, switching to natural cleaning products offers a wealth of benefits...</p>
@@ -187,7 +198,8 @@
 
     <!-- FEATURED PRODUCTS -->
     <section class="section">
-        <h2 style="margin-bottom:30px;">Featured Products</h2>
+        <div class="products-push-right">
+        <h2 style="margin-bottom:30px; font-size: 30px; font-weight: 700;">Featured Products</h2>
         <div class="featured-grid" id="featuredCarousel">
             <div class="product-card">
                 <img src="images/1.png" style="width:100%; height:180px; object-fit:contain;" alt="">
@@ -205,6 +217,7 @@
                 <img src="images/png2.png" style="width:100%; height:180px; object-fit:contain;" alt="">
                 <p><strong>Amtoi Air Freshener - Chaand</strong></p>
             </div>
+        </div>
         </div>
     </section>
 
@@ -239,14 +252,37 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="section">
-        <h2 style="text-align:center; margin-bottom:30px;">Testimonials</h2>
-        <div class="testimonials">
-            <div class="testimonial">"I was amazed at how quickly this cleaner removed years of grime..." - Impressed User</div>
-            <div class="testimonial">"This all-purpose cleaner is perfect for my busy household..." - Busy Mom</div>
-            <div class="testimonial">"I love that this cleaner is eco-friendly..." - Discerning Customer</div>
-        </div>
-    </section>
+   <section class="testimonial-section">
+    <div class="testimonial-push-wrapper">
+        <h2 id="Heading" class="testimonial-title">Testimonials</h2>
+        
+        <div class="testimonials-container">
+            <button class="test-arrow left-test-arrow">
+                 <img src="images/arrow-left.png" alt="Left">
+            </button>
+
+            <div class="testimonials-grid" id="testCarousel">
+                
+                <div class="testimonial-card">
+                    <p class="test-quote">"I was amazed at how quickly this cleaner removed years of grime from my oven. It made a job I dreaded into a breeze. I highly recommend it to anyone looking for a powerful and effective cleaner."</p>
+                    <p class="test-user">- Impressed User</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="test-quote">"This all-purpose cleaner is perfect for my busy household. It's gentle enough for everyday use, yet powerful enough to tackle tough messes. Plus, the fresh scent is a bonus!"</p>
+                    <p class="test-user">- Busy Mom</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="test-quote">"I love that this cleaner is eco-friendly and non-toxic. It’s safe for my family and pets, and it works just as well as harsh chemical cleaners. This glass cleaner leaves my windows streak-free and sparkling!"</p>
+                    <p class="test-user">- Discerning Customer</p>
+                </div>
+                
+            </div> <button class="test-arrow right-test-arrow">
+                <img src="images/right aroow.png" alt="Right">
+            </button>
+
+        </div> </div> </section>
 
     <!-- FOOTER -->
      <footer id="main-footer">
